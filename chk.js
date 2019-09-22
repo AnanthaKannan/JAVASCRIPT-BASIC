@@ -1,2 +1,2 @@
-var myArr = Array.from("ABCDEFG");
-console.log("TCL: myArr", myArr)
+const crypto = require('crypto').randomBytes(64).toString('hex');
+console.log(crypto);
