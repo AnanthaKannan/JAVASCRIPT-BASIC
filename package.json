@@ -1,0 +1,23 @@
+{
+  "name": "array",
+  "version": "1.0.0",
+  "description": "#1 Array basic functions",
+  "main": "array.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnanthaKannan/JAVASCRIPT-BASIC.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnanthaKannan/JAVASCRIPT-BASIC/issues"
+  },
+  "homepage": "https://github.com/AnanthaKannan/JAVASCRIPT-BASIC#readme",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}
