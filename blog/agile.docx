@@ -1,0 +1,54 @@
+List of Methodology:
+    1. Waterfall 
+    2.spiral
+    3.....
+
+Waterfall:
+    It is basically from starting to ending process
+    1. Requirement
+    2. Design
+    3. Developing
+    4. Testing
+    5. Deploying
+
+    This all process will happen step by step process.
+    once you complete first step then only you will go to second process.
+
+    Disadvantages:
+        * You can't able to go back. it's means once completed Design part, then you 
+          proceed to Deploying part. when you are in Developing new requirement should
+          not come and new design changing should not come. 
+
+spiral:
+    It is looking like mosquito coil, or like spiral.
+    Please refer the image to understand the process.
+
+
+
+Basic problems of this methodologies:
+    * Estimation
+    * Requirement changes
+    * Time management
+    * Meeting without agenda
+    * Miss communication with tools
+
+    Estimation:
+        This methodologies d't plan for estimation time period to close the work.
+        There's only plan to complete the project by end of the time.
+    Requirement changes:
+        If the requirement change comes in the between time of the project mean, 
+        the requirement will accepted but the closing time period of project 
+        will not extend. so it's affect the process of developing.
+    Time management:
+        Time management is the biggest problem. Because developers put the full 
+        effort in end of the project time period, not in the beginning.
+        So they can't identify the project will complete the certain period or not.
+    Meeting without agenda:
+    
+
+
+
+
+
+
+
