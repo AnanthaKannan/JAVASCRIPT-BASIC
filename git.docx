@@ -1,0 +1,14 @@
+Create file => test.html
+
+git add test.html       => to add indiviual file
+git add .               => to add all modified and new files
+git diff                => to see the difference.
+git push                => to push the code in git.
+
+
+git checkout -b store   => create new branch in visual studio code.
+git checkout master     => master file will come in visual studio code.
+git status              => see the status
+git merge store         => to merge the master branch to store brach.
+git push                => push the code in git
+
