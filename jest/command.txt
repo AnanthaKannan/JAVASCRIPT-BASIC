@@ -1,0 +1,21 @@
+npm i --save-dev jest
+
+jest => to run the program
+
+the test file should be filename.test.js
+
+goto package.json file and change as 
+"scripts": {
+    "test": "jest"
+  }, 
+
+
+  if you want to see the code coverage then you need to change package.json like this
+    "scripts": {
+    "test": "jest --coverage"
+  },
+
+  when you execute the file 'coverage' file will create. you can see the coverage of the code 
+  from there.
+
+  
