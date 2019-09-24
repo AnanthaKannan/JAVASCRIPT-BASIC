@@ -1,3 +1,7 @@
+ 
+
+ GET http://localhost:3000/getUser?page=3&limit=7
+###
 GET http://localhost:3000/posts
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYW5hbnRoIiwiaWF0IjoxNTY5MTY5MDExfQ.fqbu0gLGMzulMo6ypVtBFhVhEouWbQ7Erm3tGtGCXv4
 
