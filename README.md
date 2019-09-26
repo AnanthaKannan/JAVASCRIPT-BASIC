@@ -8,4 +8,4 @@
 
 #4 pagination                       ✔
 
-#5  
+#5  JEST unit testing                ✔
