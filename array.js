@@ -98,3 +98,21 @@ const topThree = items.slice(0, 3);
 //   { name: 'b', prize: 300 },
 //   { name: 'c', prize: 400 } ]
 
+
+// Object iteration
+const obj = {
+    name: 'annath',
+    age:24,
+
+}
+
+for (const key in obj) {
+    if (!obj.hasOwnProperty(key)) return;
+        const element = obj[key];
+        // console.log(`key ${ key } value ${ element}`)   
+}
+
+// array iteration like forEach
+for(let item of items){
+    console.log(item)
+}
