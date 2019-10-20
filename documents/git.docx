@@ -12,3 +12,8 @@ git status              => see the status
 git merge store         => to merge the master branch to store brach.
 git push                => push the code in git
 
+
+
+
+git config --global user.name   => find the username
+
