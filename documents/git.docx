@@ -20,3 +20,9 @@ git config --global user.name   => find the username
 ----------Git asks for username every time I push------------
 $ git config credential.helper store
 $ git push http://example.com/repo.git
+
+
+----------Git asks for username every time I push------------
+
+notepad ./.git/config
+url = https://username:password@repository-url.com
