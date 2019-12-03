@@ -1,5 +1,5 @@
 GET http://localhost:8888/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia2FubmFuIiwiaWF0IjoxNTY5MzA4NjYwLCJleHAiOjE1NjkzMDg2OTB9.cx95pSc3IXM1RGJ2VO9eWnLS6d7bUZqHyMCWKO9qPWI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia2FubmFuIiwiaWF0IjoxNTc0MzUzODY1LCJleHAiOjE1NzQzNTM4OTV9.XSpuIb75GKl7dkwk5J5bJlXn5nH_qrWclM1cceM6Bn4
 
 ###
 
@@ -15,7 +15,7 @@ POST http://localhost:8888/token_gen_using_referesh_token
 Content-type: application/json
 
 {
-    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia2FubmFuIiwiaWF0IjoxNTY5MzA5MTQ4fQ.uYuaE7WTtnG5B43QPiY446S-pZxumc1Z1ALCGH9_T20" 
+    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia2FubmFuIiwiaWF0IjoxNTc0MzUzOTI0fQ.uNKE-cOiQ0FubBs7_6h6o9dGrmn9vZJhQbYpfDfhPI0" 
 }
 ###
 
