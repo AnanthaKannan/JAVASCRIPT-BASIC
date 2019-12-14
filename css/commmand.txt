@@ -1,0 +1,5 @@
+relative:
+    it is just like static. but you can change left right in the css.
+https://www.algoexpert.io/product
+
+https://www.w3schools.com/cssref/css_websafe_fonts.asp
