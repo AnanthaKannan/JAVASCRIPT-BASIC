@@ -1,0 +1,33 @@
+:root{
+    --div-background-color: red;
+    --text-color: black;
+    --div-padding: 10px;
+    --div-margin: 10px;
+}
+
+/* if the --background-color is there, this will take. other wise take as pink */
+body{
+    background-color: var(--background-color, pink);
+}
+
+.child{
+    background-color: var(--div-background-color);
+    color: var(--text-color);
+}
+
+/* over write css value*/
+.one{
+    --div-background-color: green;
+    --text-color: white;
+}
+
+.one-one{
+    padding: var(--div-padding);
+    margin: var(--div-margin);
+}
+
+.one-two{
+    padding: var(--div-padding);
+    margin: var(--div-margin);
+    --div-background-color: yellow;
+}
