@@ -26,3 +26,7 @@ $ git push http://example.com/repo.git
 
 notepad ./.git/config
 url = https://username:password@repository-url.com
+
+
+// to clear the terminal by programically. for windows
+process.stdout.write('\033c');
