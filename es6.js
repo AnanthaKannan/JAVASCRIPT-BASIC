@@ -44,3 +44,4 @@ const restSpread = ( fname, lname, ...spread) => {
 
 restSpread('ana', 'kanan', 'bala', 'mani', 'king')
 
+

@@ -54,10 +54,11 @@
             border-radius:0 0 4px 4px;
             color: rgb(77, 75, 75);
         }
-        .white:active{
-            box-shadow: inset 0 0 100px gray;
+        .white.active{
+            background-image: linear-gradient(white, rgb(207, 205, 205));
+            /* box-shadow: inset 0 0 100px gray; */
         }
-        .black:active{
+        .black.active{
             box-shadow: inset 0 0 100px rgb(51, 48, 48);
         }
         li:last-child{
@@ -71,18 +72,31 @@
 </head>
 <body>
     <ul class="piano">
-        <li class="key white">z</li>
-        <li class="key black">s</li>
-        <li class="key white">x</li>
-        <li class="key black">d</li>
-        <li class="key white">c</li>
-        <li class="key white">v</li>
-        <li class="key black">g</li>
-        <li class="key white">b</li>
-        <li class="key black">h</li>
-        <li class="key white">n</li>
-        <li class="key black">j</li>
-        <li class="key white">m</li>
+        <li data-note="c" class="key white">z</li>
+        <li data-note="db" class="key black">s</li>
+        <li data-note="d" class="key white">x</li>
+        <li data-note="e" class="key black">d</li>
+        <li data-note="eb" class="key white">c</li>
+        <li data-note="f" class="key white">v</li>
+        <li data-note="gb" class="key black">g</li>
+        <li data-note="g" class="key white">b</li>
+        <li data-note="ab" class="key black">h</li>
+        <li data-note="a" class="key white">n</li>
+        <li data-note="bb" class="key black">j</li>
+        <li data-note="b" class="key white">m</li>
+
+        <audio id="c" src="notes/C.mp3"></audio>
+        <audio id="db" src="notes/Db.mp3"></audio>
+        <audio id="d" src="notes/D.mp3"></audio>
+        <audio id="eb" src="notes/Eb.mp3"></audio>
+        <audio id="e" src="notes/E.mp3"></audio>
+        <audio id="f" src="notes/F.mp3"></audio>
+        <audio id="gb" src="notes/Gb.mp3"></audio>
+        <audio id="g" src="notes/G.mp3"></audio>
+        <audio id="ab" src="notes/Ab.mp3"></audio>
+        <audio id="a" src="notes/A.mp3"></audio>
+        <audio id="bb" src="notes/Bb.mp3"></audio>
+        <audio id="b" src="notes/B.mp3"></audio>
     </ul>
 </body>
 
@@ -105,12 +119,14 @@
          key.addEventListener('click', ()=> playNote(key))
      })
 
-     function playNote(key){
-         console.log(key);
-         document.addEventListener ("DOMActivate", OnActivate, true);
+     function playNote(key){    
+         const noteAudio = document.getElementById(key.dataset.note);
+         noteAudio.currentTime = 0;
+         noteAudio.play();
+         key.classList.add('active');
+         noteAudio.addEventListener('ended', ()=>{
+             key.classList.remove('active')
+         })
      }
-     function OnActivate () {
-            console.log("The button has been activated!");
-        }
 </script>
 </html>
