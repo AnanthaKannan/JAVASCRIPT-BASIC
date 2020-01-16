@@ -1,4 +1,4 @@
-const {  GraphQLObjectType, GraphQLList, GraphQLInt } = require('graphql');
+const {  GraphQLObjectType, GraphQLList, GraphQLInt, GraphQLString  } = require('graphql');
 const { authorList, booksList } = require('./function');
 const {  BookType, authorType, statusType } = require('./fields');
 
@@ -34,11 +34,11 @@ const RootQueryType = new GraphQLObjectType({
         },
         resolve:(parent, args) => books.slice(((args.page -1) * args.limit), (args.page * args.limit) )
       },
-    //   status:{
-    //       type:new GraphQLObjectType(statusType),
-    //       description:'Status of the query',
-    //       resolve:()=>  status()
-    //   } 
+      status:{
+          type:new GraphQLList(statusType),
+          description:'Status of the query',
+          resolve:()=>  { return { name: 'kannan'} }
+      } 
     })
   })
   

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/AnanthaKannan/JAVASCRIPT-BASIC#readme",
   "dependencies": {
+    "aws-sdk": "^2.604.0",
     "axios": "^0.19.0",
     "cors": "^2.8.5",
     "date-fn": "0.0.2",

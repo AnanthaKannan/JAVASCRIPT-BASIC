@@ -24,10 +24,8 @@ const BookType = new GraphQLObjectType({
   const statusType = new GraphQLObjectType({
       name:'Status',
       description:'Status of the query',
-      fields:() =>({
-          message:{ type: GraphQLNonNull(GraphQLString)},
-          msgCode: { type: GraphQLNonNull(GraphQLString)},
-          statusCode: { type: GraphQLNonNull(GraphQLInt) }
+      fields:() =>({ 
+          name:{ type: GraphQLNonNull(GraphQLString)}
       })
   })
 
