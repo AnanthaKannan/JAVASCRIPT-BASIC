@@ -1,0 +1,83 @@
+# local variabel
+@URL = http://localhost:3000
+@authtoken = mytoken is here
+
+
+
+POST {{URL}}/{{$dotenv PORT}}/comments
+content-type: application/json
+
+{
+    "name": "sample",
+    "time": "Wed, 21 Oct 2015 18:27:50 GMT",
+    "env":{{$dotenv PORT}}/comments
+}
+
+###
+
+GET https://example.com/comments/1 HTTP/1.1
+
+###
+POST /avatars HTTP/1.1
+Host: localhost:3000
+Authentication: Bearer some-token
+Content-Type: multipart/form-data; boundary=MultipartBoundry
+Accept-Encoding: gzip, deflate
+
+--MultipartBoundry
+Content-Disposition: form-data; name="image"; filename="12348024_1150631324960893_344096225642532672_n.jpg"
+Content-Type: image/jpeg
+
+rawimagecontentwhichlooksfunnyandgoesonforever.d.sf.d.f.sd.fsdkfjkslhfdkshfkjsdfdkfh
+--MultipartBoundry
+Content-Disposition: form-data; name="category"
+
+123
+--MultipartBoundry
+Content-Disposition: form-data; name="location"
+
+123,-50
+--MultipartBoundry--
+
+
+###
+@baseUrl = https://example.com/api
+
+###
+# @name login
+POST {{baseUrl}}/api/login HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+name=foo&password=bar
+
+###
+
+@authToken = {{login.response.headers.X-AuthToken}}
+
+# @name createComment
+POST {{baseUrl}}/comments HTTP/1.1
+Authorization: {{authToken}}
+Content-Type: application/json
+
+{
+    "content": "fake content"
+}
+
+###
+
+@commentId = {{createComment.response.body.$.id}}
+
+# @name getCreatedComment
+GET {{baseUrl}}/comments/{{commentId}} HTTP/1.1
+Authorization: {{authToken}}
+
+###
+
+# @name getReplies
+GET {{baseUrl}}/comments/{{commentId}}/replies HTTP/1.1
+Accept: application/xml
+
+###
+
+# @name getFirstReply
+GET {{baseUrl}}/comments/{{commentId}}/replies/{{getReplies.response.body.//reply[1]/@id}}

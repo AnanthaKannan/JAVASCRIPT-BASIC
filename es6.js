@@ -7,12 +7,12 @@ let name = 'kannan';
 const age = 24;
 
 // arrow function
-const fnName = () =>{
+const fnName = () => {
     console.log('arrow fn is here')
 }
 fnName();
 // Default parameter 
-const defaultPara = (status=false) =>{
+const defaultPara = (status = false) => {
     console.log(`status ${ status }`)
 }
 defaultPara();
@@ -29,18 +29,19 @@ let obj = {
     qualification: 'BE'
 }
 
-const { qualification } = obj;
+const {
+    qualification
+} = obj;
 console.log(`qualification ${ qualification }`);
 
 // Array Destructuring
 let arr = ['ananth', 'kannan'];
-const [ fName, lName ] = arr;
+const [fName, lName] = arr;
 console.log(`fname ${ fName} lname ${ lName }`)
 
 // Rest and spread operator
-const restSpread = ( fname, lname, ...spread) => {
+const restSpread = (fname, lname, ...spread) => {
     console.log(fname, lname, spread);
 }
 
 restSpread('ana', 'kanan', 'bala', 'mani', 'king')
-

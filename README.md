@@ -9,3 +9,5 @@
 #4 pagination                       ✔
 
 #5  JEST unit testing                ✔
+
+(rest client)[https://marketplace.visualstudio.com/items?itemName=humao.rest-client]

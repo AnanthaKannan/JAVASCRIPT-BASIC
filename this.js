@@ -1,11 +1,11 @@
 // 1. gives methods access to their object
 
 const obj = {
-    name:"anntha",
-    sing(){
+    name: "anntha",
+    sing() {
         return `lalalal ${this.name}`
     },
-    singing(){
+    singing() {
         return this.sing() + "...!";
     }
 }
