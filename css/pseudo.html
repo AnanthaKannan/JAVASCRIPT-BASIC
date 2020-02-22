@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .required::after{
+            content: '*';
+            color: red;
+        }
+        .chk::after{
+            content: '';
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            background-color: red;
+        }
+
+        /* .chk::before{
+            content: 'First';
+            background-color: red;
+            font-weight: bold;
+            font-size: 20px;
+        } */
+
+        /* .chk::selection{
+            background-color: green;
+            color: lawngreen;
+        } */
+
+        .chk:active{
+            color: blue;
+        }
+        
+        [data-tooltip]{
+            position: relative;
+        }
+        [data-tooltip]:hover:after{
+            content: attr(data-tooltip);
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            margin-top: 5px;
+            padding: 10px;
+            background-color: lightslategray;
+        }
+    </style>
+</head>
+<body>
+    <label class="required">Name </label>
+    <input type="text" required />
+    <button data-tooltip="tooltip">submit form</button>
+    <br/>
+    <label class="chk">name dfsd sdfklakjsdf dsfjasdfjas dasdfasdff</label>
+</body>
+</html>

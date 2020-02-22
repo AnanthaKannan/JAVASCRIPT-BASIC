@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Piano</title>
+
+    <style>
+        body{
+            background-color: gray;
+             margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .piano{
+            display: flex;
+            padding: 0;
+            /* width: 30%; */
+            margin: 0 auto;
+            background-color: darkblue;
+            /* margin-top: 15vh; */
+            box-shadow: 2px 2px 5px black;
+            justify-content: center;
+            list-style-type: none;
+        }
+
+        li{
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            font-size: 1.3em;
+            padding-bottom: 10px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .white{
+            background-color: white;
+            height: 310px;
+            width: 80px;
+            border: solid 1px black;
+            color: rgb(236, 234, 234);
+        }
+        .black{
+            background-color: black;
+            height: 240px;
+            width: 60px;
+            margin-left: -30px;
+            margin-right: -30px;
+            box-shadow: 2px 2px 3px rgb(175, 173, 173);
+            z-index: 10;
+            border-radius:0 0 4px 4px;
+            color: rgb(77, 75, 75);
+        }
+        .white.active{
+            background-image: linear-gradient(white, rgb(207, 205, 205));
+            /* box-shadow: inset 0 0 100px gray; */
+        }
+        .black.active{
+            box-shadow: inset 0 0 100px rgb(51, 48, 48);
+        }
+        li:last-child{
+            border-radius:0 0 4px 0px;
+        }
+        li:first-child{
+            border-radius:0 0 0px 4px;
+        }
+    </style>
+
+</head>
+<body>
+    <ul class="piano">
+        <li data-note="c" class="key white">z</li>
+        <li data-note="db" class="key black">s</li>
+        <li data-note="d" class="key white">x</li>
+        <li data-note="e" class="key black">d</li>
+        <li data-note="eb" class="key white">c</li>
+        <li data-note="f" class="key white">v</li>
+        <li data-note="gb" class="key black">g</li>
+        <li data-note="g" class="key white">b</li>
+        <li data-note="ab" class="key black">h</li>
+        <li data-note="a" class="key white">n</li>
+        <li data-note="bb" class="key black">j</li>
+        <li data-note="b" class="key white">m</li>
+
+        <audio id="c" src="notes/C.mp3"></audio>
+        <audio id="db" src="notes/Db.mp3"></audio>
+        <audio id="d" src="notes/D.mp3"></audio>
+        <audio id="eb" src="notes/Eb.mp3"></audio>
+        <audio id="e" src="notes/E.mp3"></audio>
+        <audio id="f" src="notes/F.mp3"></audio>
+        <audio id="gb" src="notes/Gb.mp3"></audio>
+        <audio id="g" src="notes/G.mp3"></audio>
+        <audio id="ab" src="notes/Ab.mp3"></audio>
+        <audio id="a" src="notes/A.mp3"></audio>
+        <audio id="bb" src="notes/Bb.mp3"></audio>
+        <audio id="b" src="notes/B.mp3"></audio>
+    </ul>
+</body>
+
+<script>
+    const WHITE_KEYS = ['z', 'x', 'c', 'v', 'b', 'n', 'm']
+    const BLACK_KEYS = ['s', 'd', 'g', 'h', 'j'];
+    const keys = document.querySelectorAll('.key')
+    const whiteKeys = document.querySelectorAll('.key.white')
+    const blackKeys = document.querySelectorAll('.key.black')
+    
+    document.addEventListener('keydown', e =>{
+        const key = e.key;
+        const whitkeyIndex = WHITE_KEYS.indexOf(key);
+        const blackkeyIndex = BLACK_KEYS.indexOf(key);
+        if(whitkeyIndex > -1) playNote(whiteKeys[whitkeyIndex])
+        if(blackkeyIndex > -1) playNote(blackKeys[blackkeyIndex])
+    })
+
+     keys.forEach((key) =>{
+         key.addEventListener('click', ()=> playNote(key))
+     })
+
+     function playNote(key){    
+         const noteAudio = document.getElementById(key.dataset.note);
+         noteAudio.currentTime = 0;
+         noteAudio.play();
+         key.classList.add('active');
+         noteAudio.addEventListener('ended', ()=>{
+             key.classList.remove('active')
+         })
+     }
+</script>
+</html>
