@@ -22,14 +22,19 @@ const io = require('socket.io')(server)
 io.on( 'connection', socket =>{
     online++;
     console.log('Claint connected')
+    emitAll('')
     socket.on('disconnect', () =>{
         online--;
+        emitAll('')
         console.log('Claint disconnected');
     });
     socket.on('chat_message', (msg) => {
-        const data = { msg, online }
-        console.log('message: ' + msg, online);
-        io.emit('chat_message', data);
+      emitAll(msg)
     });
 });
 
+const emitAll = (msg) =>{
+    const data = { msg, online }
+    console.log('message: ' + msg, online);
+    io.emit('chat_message', data);
+}
