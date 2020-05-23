@@ -21,12 +21,12 @@ let online = 0;
 const io = require('socket.io')(server)
 io.on( 'connection', socket =>{
     online++;
-    console.log('Claint connected')
+    console.log('Client connected')
     emitAll('')
     socket.on('disconnect', () =>{
         online--;
         emitAll('')
-        console.log('Claint disconnected');
+        console.log('Client disconnected');
     });
     socket.on('chat_message', (msg) => {
       emitAll(msg)
